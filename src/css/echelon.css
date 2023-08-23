@@ -1,0 +1,113 @@
+/*Echelon App*/
+/*August 17, 2023*/
+
+html {
+    /* overflow: hidden; */
+    background: url("../img/chkr_cat.png") rgb(213, 243, 255);
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    animation: bkg-scrollLeftUp 15s infinite linear;
+    position: fixed;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding-top: 0px !important;
+    padding: 10px;
+    background-color: blueviolet;
+    position: fixed;
+    background: linear-gradient(to bottom, white, white, rgba(0, 0, 0, 0));
+    /* border-bottom: 1px solid black; */
+    position: absolute;
+}
+
+.appContainer {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.notePanel, .notebook {
+    /* border: 1px solid black; */
+    flex-direction: column;
+}
+
+.notePanel {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    position: sticky;
+}
+
+
+.notePanel div {
+    padding: 10px;
+}
+
+.noteListContainer {
+    margin-top: 75px;
+}
+
+.noteListItem {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: noteListItem-shadow-off 0.2s ease-in-out;
+}
+
+.noteListItem:hover {
+    animation: noteListItem-shadow-on 0.2s ease-in-out;
+    background-color: rgb(62, 123, 255);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 10px rgb(62, 123, 255);
+}
+
+.noteListItem h3{
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+
+.notebook {
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes noteListItem-shadow-on {
+    from {
+        background-color: rgba(62, 123, 255, 0);
+        color: rgb(96, 96, 96);
+        box-shadow: 0px 3px 10px rgba(62, 123, 255, 0);
+    }
+    to {
+        background-color: rgb(62, 123, 255);
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 10px rgba(62, 123, 255, 0.381);
+    }
+}
+
+@keyframes noteListItem-shadow-off {
+    from {
+        background-color: rgb(62, 123, 255);
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 10px rgba(62, 123, 255, 0.381);
+    }
+    to {
+        background-color: rgba(62, 123, 255, 0);
+        color: rgb(96, 96, 96);
+        box-shadow: 0px 3px 10px rgba(62, 123, 255, 0);
+    }
+}
+
+@keyframes bkg-scrollLeftUp {
+    from{
+        background-position: 0 0;
+    }
+    to {
+        background-position: -256px -256px;
+    }
+}
+
+
